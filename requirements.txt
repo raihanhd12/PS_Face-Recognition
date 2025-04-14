@@ -1,7 +1,14 @@
 deepface
+fastapi
 insightface
 matplotlib
 onnxruntime
 opencv-python
 pillow
+pydantic
+pydantic-settings
+python-dotenv
+python-multipart
+sqlalchemy
 tf-keras
+uvicorn

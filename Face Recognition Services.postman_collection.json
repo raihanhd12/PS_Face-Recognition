@@ -1,0 +1,175 @@
+{
+	"info": {
+		"_postman_id": "7b65eb2f-ba99-4db3-9e18-b670e66a14fa",
+		"name": "Face Recognition Services",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "41292780"
+	},
+	"item": [
+		{
+			"name": "Face Recognition Service",
+			"item": [
+				{
+					"name": "Compare",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image1",
+									"type": "file",
+									"src": "/Users/rhd/Pictures/2nd-2041720108.jpeg"
+								},
+								{
+									"key": "image2",
+									"type": "file",
+									"src": "/Users/rhd/Pictures/IMG_8693.JPG"
+								}
+							]
+						},
+						"url": "{{base_url}}/face-recognition/compare"
+					},
+					"response": [
+						{
+							"name": "Compare",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "image1",
+											"type": "file",
+											"src": "/Users/rhd/Pictures/2nd-2041720108.jpeg"
+										},
+										{
+											"key": "image2",
+											"type": "file",
+											"src": "/Users/rhd/Pictures/IMG_8693.JPG"
+										}
+									],
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base_url}}/face-recognition/compare"
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "Visualization",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{base_url}}/face-recognition/visualization?path=tmp/comparison_a8d3b29f.jpg",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"face-recognition",
+								"visualization"
+							],
+							"query": [
+								{
+									"key": "path",
+									"value": "tmp/comparison_a8d3b29f.jpg"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Visualization",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [],
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/face-recognition/visualization?path=tmp/comparison_f2aef822.jpg",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"face-recognition",
+										"visualization"
+									],
+									"query": [
+										{
+											"key": "path",
+											"value": "tmp/comparison_f2aef822.jpg"
+										}
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				}
+			],
+			"auth": {
+				"type": "apikey",
+				"apikey": {
+					"value": "a8ceftLocmHTkSD0fll-onO8scUAwhqzHIXHfLDqXXk",
+					"key": "X-API-Key"
+				}
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	]
+}
