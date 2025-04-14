@@ -1,0 +1,7 @@
+deepface
+insightface
+matplotlib
+onnxruntime
+opencv-python
+pillow
+tf-keras

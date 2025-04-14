@@ -1,0 +1,5 @@
+.venv
+.DS_Store
+image_testing/*
+!image_testing/.gitkeep
+comparison_result.jpg
