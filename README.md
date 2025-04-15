@@ -56,7 +56,7 @@ API_KEY=your_generated_key_here
 1. Start the server:
 
 ```bash
-uvicorn app.main:app --reload
+python main.py
 ```
 
 2. Access the API documentation at http://localhost:8000/docs
