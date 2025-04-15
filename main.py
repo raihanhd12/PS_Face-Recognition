@@ -1,3 +1,4 @@
+import uvicorn
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
@@ -25,3 +26,12 @@ app.include_router(api_router)
 @app.get("/")
 def root():
     return {"message": "Welcome to Face Recognition API"}
+
+
+if __name__ == "__main__":
+    uvicorn.run(
+        "main:app",
+        host=settings.API_HOST,
+        port=settings.API_PORT,
+        reload=True,
+    )

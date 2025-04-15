@@ -12,3 +12,5 @@ python-multipart
 sqlalchemy
 tf-keras
 uvicorn
+dotenv
+uvicorn[standard]

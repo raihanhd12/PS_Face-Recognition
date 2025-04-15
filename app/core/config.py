@@ -1,6 +1,4 @@
 # app/core/config.py
-import secrets
-
 from pydantic_settings import BaseSettings
 
 
@@ -11,8 +9,12 @@ class Settings(BaseSettings):
     API_V1_STR: str = "/api/v1"
 
     # Security
-    API_KEY: str = secrets.token_urlsafe(32)
-    API_KEY_NAME: str = "X-API-Key"
+    API_KEY: str
+    API_KEY_NAME: str
+
+    # Server settings
+    API_HOST: str
+    API_PORT: int
 
     class Config:
         env_file = ".env"
