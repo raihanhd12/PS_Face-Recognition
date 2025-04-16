@@ -1,6 +1,6 @@
 # Face Recognition API
 
-A FastAPI service for comparing face images and determining if they match using InsightFace's face recognition technology.
+A FastAPI service for comparing face images and determining if they match using FaceNet PyTorch face recognition technology.
 
 ## Features
 
@@ -24,6 +24,7 @@ A FastAPI service for comparing face images and determining if they match using 
 │   ├── services
 │   │   └── face_recognition.py      # Face recognition logic
 │   └── main.py                      # Application entry point
+├── models                           # Downloaded model files (created automatically)
 ├── requirements.txt                 # Dependencies
 └── README.md                        # This file
 ```
@@ -37,6 +38,8 @@ A FastAPI service for comparing face images and determining if they match using 
 pip install -r requirements.txt
 ```
 
+The first time you run the application, it will automatically download the required FaceNet models.
+
 ## Configuration
 
 1. Generate a secure API key:
@@ -49,6 +52,9 @@ python -c "import secrets; print(secrets.token_urlsafe(32))"
 
 ```
 API_KEY=your_generated_key_here
+API_KEY_NAME=X-API-Key
+API_HOST=0.0.0.0
+API_PORT=8000
 ```
 
 ## Usage
@@ -98,7 +104,7 @@ Compare two face images to determine if they match.
 
 - `image1`: First face image (file upload)
 - `image2`: Second face image (file upload)
-- `threshold`: Similarity threshold for matching (0.0-1.0, default: 0.5)
+- `threshold`: Similarity threshold for matching (0.0-1.0, default: 0.7)
 
 **Headers:**
 
@@ -110,7 +116,7 @@ Compare two face images to determine if they match.
 {
   "match": true,
   "similarity": 0.9245,
-  "threshold": 0.5,
+  "threshold": 0.7,
   "visualization": "/face-recognition/visualization?path=tmp/comparison_abc123.jpg"
 }
 ```
@@ -133,7 +139,8 @@ Get the visualization image showing the comparison.
 
 ## Dependencies
 
+- FaceNet PyTorch: Face recognition models (MTCNN and InceptionResnetV1)
 - FastAPI: Web framework
-- InsightFace: Face recognition technology
+- PyTorch: Deep learning framework
 - OpenCV: Image processing
 - Matplotlib: Visualization generation
